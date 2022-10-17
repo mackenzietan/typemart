@@ -5,7 +5,7 @@ const productName: string = 'shirt';
 const product = products.filter(product => product.name === productName)[0]; 
 
 //vvv sends message if the item can be pre-ordered vvv
-if (product.preOrder === 'true') {
+if (product.preOrder === true) {
   console.log(`Hello! Thank you for your order. We will send you a message when your ${product.name} is on the way!`);
 } 
 
@@ -17,7 +17,7 @@ let total: number;
 const shippingAddress: string = '1 Newbie Ave., Albany, New York 10101';
 
 //vvv does the item qualify for free shipping? vvv
-if (Number(product.price) > 25) {
+if (product.price > 25) {
   console.log(`Great news! Your ${product.name} qualifies for free shipping!`);
   shipping = 0;
 } else {
@@ -32,8 +32,8 @@ if (shippingAddress.match('New York City')) {
 }
 
 //vvv calc total vvv
-taxTotal = Number(product.price) * taxPercent;
-total = Number(product.price) + taxTotal + shipping;
+taxTotal = product.price * taxPercent;
+total = product.price + taxTotal + shipping;
 
 //vvv log receipt vvv
 console.log(`Item ordered: ${product.name}`);
