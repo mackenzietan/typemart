@@ -1,4 +1,4 @@
-import products from './products'; //imports from products.ts
+import products from './typemart-products'; //imports from products.ts
 
 //vvv creates variable from product.ts based on productName input vvv
 const productName: string = 'shirt';
